@@ -1,2 +1,3 @@
 *.csv
 *.txt
+atari_reinforcement_learning/logs

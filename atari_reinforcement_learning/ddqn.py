@@ -16,7 +16,8 @@ from keras.layers import Conv2D, Flatten, Dense
 ### global params
 #
 
-ENV_NAME = 'PongDeterministic-v4'
+ENV_NAME = 'BreakoutDeterministic-v4'
+FILE_NAME = os.path.basename(__file__)
 
 DISCOUNT = 0.99
 LEARN_RATE = 0.0001
@@ -34,7 +35,7 @@ EPSILON_MIN2 = 0.01
 EPSILON_LINEAR_DECAY1 = (1.0 / 1000000) #* REPLAY_FREQ
 EPSILON_LINEAR_DECAY2 = (1.0 / 20000000) #* REPLAY_FREQ
 
-EPISODES = 5000
+EPISODES = 5000 * 6
 
 
 # 
@@ -230,7 +231,7 @@ class DDQN():
                 
                 # target save
                 if (self.total_steps % SAVE_STEPS == 0) and (self.total_steps >= SAVE_STEPS):
-                    file_dir = './model/{}/'.format(ENV_NAME)
+                    file_dir = './model/{}/{}/'.format(FILE_NAME, ENV_NAME)
                     file_path = file_dir + 'model.h5'
                     if not os.path.exists(file_dir):
                         os.makedirs(file_dir)
