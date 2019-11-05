@@ -16,7 +16,7 @@ from keras.layers import Conv2D, Flatten, Dense
 ### global params
 #
 
-ENV_NAME = 'BreakoutDeterministic-v4'
+ENV_NAME = 'MsPacmanDeterministic-v4'
 FILE_NAME = os.path.basename(__file__)
 
 DISCOUNT = 0.99
